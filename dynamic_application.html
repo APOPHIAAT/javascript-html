@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic application</title>
+    <style>
+        body{
+            background-color:aquamarine;
+        }
+    </style>
+    <script src="./actions/action_it.js"></script>
+    
+</head>
+<body onload="greet()">
+   <button onclick="alert('Hello World')">Click me</button>
+   <p id="text"> This is the firdt HTML,CSS and Javascript Fusion</p>
+   <button onclick="change_text()">Change text</button>
+   <button id="click">Internal Javascript Click</button>
+   <p >change Background color from here</p>
+   <input id="color-picker" type="color" />
+<script>
+     const buttonId =document.getElementById('click')
+   document.getElementById("click").onclick = function(){
+    alert("Button was clicked.")
+
+   }
+
+   buttonId.onmouseover = function(){
+    buttonId.style.color = "red"
+   }
+
+   buttonId.onmouseout = function(){
+    buttonId.style.color = "yellow"
+   }
+
+
+    const colorPicker = document.getElementById('color-picker');
+
+
+    colorPicker.addEventListener('input', function() {
+
+        document.body.style.backgroundColor = colorPicker.value;
+    });
+</script>
+</body>
+</html>
